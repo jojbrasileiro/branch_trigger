@@ -2,12 +2,14 @@ import requests
 import time
 
 # Configurações
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = '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'
 OWNER = 'jojbrasileiro'
 REPO = 'branch_trigger'
 BRANCH_ALVO = 'main'  # branch de destino do merge
 
 API_URL = f'https://api.github.com/repos/{OWNER}/{REPO}/pulls?state=closed&per_page=100'
+
+print(API_URL)
 
 headers = {
     "Authorization": f"token {GITHUB_TOKEN}",
