@@ -2,7 +2,7 @@ import requests
 import time
 
 # Configurações
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = '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'
 OWNER = 'jojbrasileiro'
 REPO = 'branch_trigger'
 BRANCH_ALVO = 'main'  # branch de destino do merge
