@@ -5,7 +5,7 @@ import time
 GITHUB_TOKEN = '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'
 OWNER = 'jojbrasileiro'
 REPO = 'branch_trigger'
-BRANCH_ALVO = 'main'  # branch de destino do merge
+BRANCH_ALVO = 'main'
 
 API_URL = f'https://api.github.com/repos/{OWNER}/{REPO}/pulls?state=closed&per_page=100'
 
@@ -27,13 +27,12 @@ while True:
                 pr_id = pr['id']
                 if pr_id not in vistos:
                     vistos.add(pr_id)
-                    print(f"🎯 Merge detectado na branch {BRANCH_ALVO}!")
-                    print(f"🔀 {pr['head']['ref']} → {pr['base']['ref']}")
-                    print(f"📌 Título: {pr['title']}")
-                    print(f"👤 Por: {pr['user']['login']}")
+                    print(f"Merge detectado na branch {BRANCH_ALVO}!")
+                    print(f"{pr['head']['ref']} → {pr['base']['ref']}")
+                    print(f"Título: {pr['title']}")
+                    print(f"Por: {pr['user']['login']}")
                     print("---")
-                    # subprocess.call(["./seu_script.sh"])
     else:
         print(f"❌ Erro ao consultar API: {response.status_code}")
     
-    time.sleep(60)  # Espera 1 minuto
+    time.sleep(60)
